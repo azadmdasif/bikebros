@@ -2,24 +2,21 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const app = express();
-// Render provides the PORT environment variable.
-const port = process.env.PORT || 10000; 
-
-// ES module-friendly __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const buildPath = path.join(__dirname, 'dist');
 
-// Serve static files from the React app build directory
-app.use(express.static(buildPath));
+const app = express();
+const port = process.env.PORT || 3000;
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back the app's index.html file.
+// Serve static files from the 'dist' directory, which is Vite's build output
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// For any request that doesn't match a static file, serve index.html
+// This is to support client-side routing
 app.get('*', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
