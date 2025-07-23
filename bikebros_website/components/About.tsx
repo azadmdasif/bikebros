@@ -14,7 +14,12 @@ export const About: React.FC = () => {
             </p>
         </div>
         <div className="md:w-1/2">
-            <img src="https://images.unsplash.com/photo-1599819097435-a63e4cb459c3?q=80&w=1974&auto=format&fit=crop" alt="Group of friends with motorcycles" className="rounded-lg shadow-2xl shadow-brand-teal/20 w-full" />
+            <img
+  src="/images/about-us.jpg"
+  alt="Group of friends with motorcycles"
+  className="rounded-lg shadow-2xl shadow-brand-teal/20 w-full"
+/>
+
         </div>
       </div>
     </section>
