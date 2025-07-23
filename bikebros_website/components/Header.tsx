@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
     <header className="bg-brand-black bg-opacity-80 backdrop-blur-md sticky top-0 z-40 py-4 px-4 md:px-8 shadow-lg shadow-brand-teal/10">
       <div className="container mx-auto flex justify-between items-center">
         <a href="/" aria-label="BikeBros homepage">
-          <img src="images/logo.png" alt="BikeBros Logo" className="h-16" />
+          <img src="images/logo.png" alt="BikeBros Logo" className="h-20" />
         </a>
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink onClick={onNavigate.about}>About</NavLink>
