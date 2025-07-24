@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { Bike, BikeRates, AdditionalCharge } from '../types';
 import { WEB3FORMS_ACCESS_KEY } from '../constants';
 
@@ -8,6 +8,7 @@ interface BookingFormProps {
   commuterRates: BikeRates;
   sportsBikeRates: BikeRates;
   additionalCharges: AdditionalCharge[];
+  initialBikeId: string | null;
 }
 
 const Section: React.FC<{ num: number; title: string; children: React.ReactNode }> = ({ num, title, children }) => (
@@ -19,7 +20,7 @@ const Section: React.FC<{ num: number; title: string; children: React.ReactNode 
 
 const inputStyle = "bg-brand-black border border-brand-gray-dark/50 rounded-lg p-3 text-white w-full focus:outline-none focus:ring-2 focus:ring-brand-orange";
 
-export const BookingForm: React.FC<BookingFormProps> = ({ bikes, scooterRates, commuterRates, sportsBikeRates, additionalCharges }) => {
+export const BookingForm: React.FC<BookingFormProps> = ({ bikes, scooterRates, commuterRates, sportsBikeRates, additionalCharges, initialBikeId }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,6 +38,12 @@ export const BookingForm: React.FC<BookingFormProps> = ({ bikes, scooterRates, c
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    if (initialBikeId) {
+      setFormData(prev => ({ ...prev, bikeId: initialBikeId }));
+    }
+  }, [initialBikeId]);
 
   const bikeRateMap = useMemo(() => {
     const map = new Map<string, { '6': number; '12': number; '24': number; }>();
