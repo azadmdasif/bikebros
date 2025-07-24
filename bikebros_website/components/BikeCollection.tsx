@@ -3,9 +3,15 @@ import type { Bike, BikeCategory } from '../types';
 
 interface BikeCollectionProps {
   bikes: Bike[];
+  onBookBike: (bikeId: number) => void;
 }
 
-const BikeCard: React.FC<{ bike: Bike }> = ({ bike }) => {
+interface BikeCardProps {
+  bike: Bike;
+  onBookBike: (bikeId: number) => void;
+}
+
+const BikeCard: React.FC<BikeCardProps> = ({ bike, onBookBike }) => {
   const colorClasses = {
     orange: 'border-brand-orange hover:shadow-brand-orange/30',
     yellow: 'border-brand-yellow hover:shadow-brand-yellow/30',
@@ -18,13 +24,19 @@ const BikeCard: React.FC<{ bike: Bike }> = ({ bike }) => {
       <img src={bike.imageUrl} alt={bike.name} className="w-full h-60 object-cover" />
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-2xl font-bold text-white mb-2">{bike.name}</h3>
-        <p className="text-brand-gray-light font-sans flex-grow">{bike.description}</p>
+        <p className="text-brand-gray-light font-sans flex-grow mb-4">{bike.description}</p>
+        <button 
+          onClick={() => onBookBike(bike.id)}
+          className="mt-auto bg-brand-orange text-white font-bold py-2 px-4 rounded-full hover:bg-brand-yellow hover:text-brand-black transition-all duration-300 w-full"
+        >
+          Book This Bike
+        </button>
       </div>
     </div>
   );
 };
 
-export const BikeCollection: React.FC<BikeCollectionProps> = ({ bikes }) => {
+export const BikeCollection: React.FC<BikeCollectionProps> = ({ bikes, onBookBike }) => {
   const categories: BikeCategory[] = ['Commuter', 'Sports', 'Scooter'];
   
   const bikesByCategory = (category: BikeCategory) => {
@@ -44,7 +56,7 @@ export const BikeCollection: React.FC<BikeCollectionProps> = ({ bikes }) => {
             <h3 className="text-4xl font-heading text-center mb-10 text-brand-teal tracking-widest">{category}S</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {bikesByCategory(category).map(bike => (
-                <BikeCard key={bike.id} bike={bike} />
+                <BikeCard key={bike.id} bike={bike} onBookBike={onBookBike} />
               ))}
             </div>
           </div>
