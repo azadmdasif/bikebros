@@ -46,14 +46,14 @@ export const COMMUTER_RATES: BikeRates = {
   'Honda Shine / Bajaj Platina':    { '6': 749, '12': 999,  '24': 1499 },
   'Pulsar 150 / TVS Raider 125':  { '6': 849, '12': 1099, '24': 1699 },
   'TVS Apache RTR 160 4V':        { '6': 899, '12': 1199, '24': 1799 },
-  'RE Hunter 350':                { '6': 999, '12': 1299, '24': 1999 },
+  'Royal Enfield Hunter 350':                { '6': 999, '12': 1299, '24': 1999 },
 };
 
 export const SPORTS_BIKE_RATES: BikeRates = {
   'Pulsar NS200 / Yamaha R15': { '6': 799,  '12': 899,  '24': 1499 },
-  'RE Classic 350':            { '6': 799,  '12': 1099, '24': 1599 },
+  'Royal Enfield Classic 350':            { '6': 799,  '12': 1099, '24': 1599 },
   'KTM Duke 390':              { '6': 899,  '12': 1199, '24': 1799 },
-  'RE Interceptor 650':        { '6': 1099, '12': 1299, '24': 2099 },
+  'Royal Enfield Interceptor 650':        { '6': 1099, '12': 1299, '24': 2099 },
   'Kawasaki Ninja 300':        { '6': 1199, '12': 1399, '24': 2299 },
 };
 
