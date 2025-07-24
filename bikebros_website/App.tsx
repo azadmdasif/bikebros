@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -22,6 +22,7 @@ const App: React.FC = () => {
   const bookingRef = useRef<HTMLDivElement>(null);
 
   const [modalContent, setModalContent] = useState<LegalContent | null>(null);
+  const [selectedBikeForBooking, setSelectedBikeForBooking] = useState<string | null>(null);
 
   const scrollTo = (ref: React.RefObject<HTMLElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -34,6 +35,14 @@ const App: React.FC = () => {
   const handleCloseModal = () => {
     setModalContent(null);
   }
+
+  const handleBookBike = (bikeId: number) => {
+    setSelectedBikeForBooking(bikeId.toString());
+    // Give state a moment to update before scrolling
+    setTimeout(() => {
+        scrollTo(bookingRef);
+    }, 100);
+  };
 
   return (
     <div className="min-h-screen bg-brand-black overflow-x-hidden">
@@ -52,7 +61,7 @@ const App: React.FC = () => {
           <About />
         </div>
         <div ref={bikeCollectionRef}>
-          <BikeCollection bikes={BIKES} />
+          <BikeCollection bikes={BIKES} onBookBike={handleBookBike} />
         </div>
         <div ref={ratesRef}>
           <Rates 
@@ -75,6 +84,7 @@ const App: React.FC = () => {
             commuterRates={COMMUTER_RATES}
             sportsBikeRates={SPORTS_BIKE_RATES}
             additionalCharges={ADDITIONAL_CHARGES}
+            initialBikeId={selectedBikeForBooking}
           />
         </div>
       </main>
