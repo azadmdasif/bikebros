@@ -4,31 +4,31 @@ import type { Bike, BikeRates, Testimonial, AdditionalCharge } from './types';
 export const WEB3FORMS_ACCESS_KEY = 'b9f95d5b-8f90-477b-a068-55293c654708';
 
 const COMMUTER_BIKES: Bike[] = [
-  { id: 1, name: 'Hero Splendor Plus', description: 'Reliable 97cc commuter (~70 kmpl)', imageUrl: 'https://images.unsplash.com/photo-1625041312388-3a81b3b642e4?q=80&w=800&auto=format&fit=crop', color: 'black', category: 'Commuter' },
-  { id: 2, name: 'Hero HF Deluxe', description: 'Ultra-budget, high mileage (~65 kmpl)', imageUrl: 'https://images.unsplash.com/photo-1625041312388-3a81b3b642e4?q=80&w=800&auto=format&fit=crop', color: 'teal', category: 'Commuter' },
-  { id: 3, name: 'Honda Shine 125', description: 'Smooth 125cc, refined and reliable (~55 kmpl)', imageUrl: 'https://images.unsplash.com/photo-1618776472442-9988d38400a2?q=80&w=800&auto=format&fit=crop', color: 'orange', category: 'Commuter' },
-  { id: 4, name: 'Bajaj Platina 110', description: 'Comfort-focused, excellent mileage (~70 kmpl)', imageUrl: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=800&auto=format&fit=crop', color: 'yellow', category: 'Commuter' },
-  { id: 5, name: 'Bajaj Pulsar 150', description: 'Sport-commuter staple', imageUrl: 'https://images.unsplash.com/photo-1629893173262-9883504168b9?q=80&w=800&auto=format&fit=crop', color: 'black', category: 'Commuter' },
-  { id: 6, name: 'TVS Apache RTR 160 4V', description: 'Sharp handling, performance streetfighter', imageUrl: 'https://images.unsplash.com/photo-1599819097435-a63e4cb459c3?q=80&w=800&auto=format&fit=crop', color: 'orange', category: 'Commuter' },
-  { id: 7, name: 'TVS Raider 125', description: 'Youth-style commuter, digital console (~65 kmpl)', imageUrl: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=800&auto=format&fit=crop', color: 'yellow', category: 'Commuter' },
-  { id: 8, name: 'Royal Enfield Hunter 350', description: 'Compact urban cruiser (349cc)', imageUrl: 'https://images.unsplash.com/photo-1668206552690-34a06739ac69?q=80&w=800&auto=format&fit=crop', color: 'teal', category: 'Commuter' },
+  { id: 1, name: 'Hero Splendor Plus', description: 'Reliable 97cc commuter (~70 kmpl)', imageUrl: '/images/hero-splendor-plus.jpg', color: 'black', category: 'Commuter' },
+  { id: 2, name: 'Hero HF Deluxe', description: 'Ultra-budget, high mileage (~65 kmpl)', imageUrl: '/images/hero-hf-deluxe.jpg', color: 'teal', category: 'Commuter' },
+  { id: 3, name: 'Honda Shine 125', description: 'Smooth 125cc, refined and reliable (~55 kmpl)', imageUrl: '/images/honda-shine-125.jpg', color: 'orange', category: 'Commuter' },
+  { id: 4, name: 'Bajaj Platina 110', description: 'Comfort-focused, excellent mileage (~70 kmpl)', imageUrl: '/images/bajaj-platina-110.jpg', color: 'yellow', category: 'Commuter' },
+  { id: 5, name: 'Bajaj Pulsar 150', description: 'Sport-commuter staple', imageUrl: '/images/bajaj-pulsar-150.jpg', color: 'black', category: 'Commuter' },
+  { id: 6, name: 'TVS Apache RTR 160 4V', description: 'Sharp handling, performance streetfighter', imageUrl: '/images/tvs-apache-rtr-160-4v.jpg', color: 'orange', category: 'Commuter' },
+  { id: 7, name: 'TVS Raider 125', description: 'Youth-style commuter, digital console (~65 kmpl)', imageUrl: '/images/tvs-raider-125.jpg', color: 'yellow', category: 'Commuter' },
+  { id: 8, name: 'Royal Enfield Hunter 350', description: 'Compact urban cruiser (349cc)', imageUrl: '/images/royal-enfield-hunter-350.jpg', color: 'teal', category: 'Commuter' },
 ];
 
 const SPORTS_BIKES: Bike[] = [
-  { id: 9, name: 'Bajaj Pulsar NS200', description: 'Fiery naked sport-commuter', imageUrl: 'https://images.unsplash.com/photo-1629893173262-9883504168b9?q=80&w=800&auto=format&fit=crop', color: 'orange', category: 'Sports' },
-  { id: 10, name: 'Yamaha R15 V4', description: 'Supersport mini-bike, track DNA', imageUrl: 'https://images.unsplash.com/photo-1621303837119-1c2de793439b?q=80&w=800&auto=format&fit=crop', color: 'teal', category: 'Sports' },
-  { id: 11, name: 'KTM Duke 390', description: 'High-performance naked streetfighter', imageUrl: 'https://images.unsplash.com/photo-1622037040843-659103b41e3d?q=80&w=800&auto=format&fit=crop', color: 'orange', category: 'Sports' },
-  { id: 12, name: 'Royal Enfield Classic 350', description: 'Retro-styled cruiser with cult status', imageUrl: 'https://images.unsplash.com/photo-1623547285909-e3813a89e8a5?q=80&w=800&auto=format&fit=crop', color: 'black', category: 'Sports' },
-  { id: 13, name: 'Royal Enfield Interceptor 650', description: 'Twin-cylinder roadster', imageUrl: 'https://images.unsplash.com/photo-1618495166424-9b889a7415d8?q=80&w=800&auto=format&fit=crop', color: 'yellow', category: 'Sports' },
-  { id: 14, name: 'Kawasaki Ninja 300', description: 'Beginner-friendly full-fairing sports bike', imageUrl: 'https://images.unsplash.com/photo-1591750245089-6b5a388a1b66?q=80&w=800&auto=format&fit=crop', color: 'teal', category: 'Sports' },
+  { id: 9, name: 'Bajaj Pulsar NS200', description: 'Fiery naked sport-commuter', imageUrl: '/images/bajaj-pulsar-ns200.jpg', color: 'orange', category: 'Sports' },
+  { id: 10, name: 'Yamaha R15 V4', description: 'Supersport mini-bike, track DNA', imageUrl: '/images/yamaha-r15-v4.jpg', color: 'teal', category: 'Sports' },
+  { id: 11, name: 'KTM Duke 390', description: 'High-performance naked streetfighter', imageUrl: '/images/ktm-duke-390.jpg', color: 'orange', category: 'Sports' },
+  { id: 12, name: 'Royal Enfield Classic 350', description: 'Retro-styled cruiser with cult status', imageUrl: '/images/royal-enfield-classic-350.jpg', color: 'black', category: 'Sports' },
+  { id: 13, name: 'Royal Enfield Interceptor 650', description: 'Twin-cylinder roadster', imageUrl: '/images/royal-enfield-interceptor-650.jpg', color: 'yellow', category: 'Sports' },
+  { id: 14, name: 'Kawasaki Ninja 300', description: 'Beginner-friendly full-fairing sports bike', imageUrl: '/images/kawasaki-ninja-300.jpg', color: 'teal', category: 'Sports' },
 ];
 
 const SCOOTERS: Bike[] = [
-  { id: 15, name: 'Suzuki Access 125', description: 'Powerful, premium 125cc scooter', imageUrl: 'https://images.unsplash.com/photo-1596708234399-a41d5a73a34a?q=80&w=800&auto=format&fit=crop', color: 'yellow', category: 'Scooter' },
-  { id: 16, name: 'Honda Activa 125', description: 'India’s most-sold 125cc scooter', imageUrl: 'https://images.unsplash.com/photo-1568772585403-ab3c65c9c8d3?q=80&w=800&auto=format&fit=crop', color: 'black', category: 'Scooter' },
-  { id: 17, name: 'TVS Jupiter 125', description: 'Comfortable, full-features family scooter', imageUrl: 'https://images.unsplash.com/photo-1588628956037-33d987a0218a?q=80&w=800&auto=format&fit=crop', color: 'orange', category: 'Scooter' },
-  { id: 18, name: 'Honda Dio 125', description: 'Sporty 125cc youth scooter', imageUrl: 'https://images.unsplash.com/photo-1596708234399-a41d5a73a34a?q=80&w=800&auto=format&fit=crop', color: 'teal', category: 'Scooter' },
-  { id: 19, name: 'Ather 450X', description: 'Tech-packed premium electric scooter', imageUrl: 'https://images.unsplash.com/photo-1629652174693-0e8c4534f3a7?q=80&w=800&auto=format&fit=crop', color: 'teal', category: 'Scooter' },
+  { id: 15, name: 'Suzuki Access 125', description: 'Powerful, premium 125cc scooter', imageUrl: '/images/suzuki-access-125.jpg', color: 'yellow', category: 'Scooter' },
+  { id: 16, name: 'Honda Activa 125', description: 'India’s most-sold 125cc scooter', imageUrl: '/images/honda-activa-125.jpg', color: 'black', category: 'Scooter' },
+  { id: 17, name: 'TVS Jupiter 125', description: 'Comfortable, full-features family scooter', imageUrl: '/images/tvs-jupiter-125.jpg', color: 'orange', category: 'Scooter' },
+  { id: 18, name: 'Honda Dio 125', description: 'Sporty 125cc youth scooter', imageUrl: '/images/honda-dio-125.jpg', color: 'teal', category: 'Scooter' },
+  { id: 19, name: 'Ather 450X', description: 'Tech-packed premium electric scooter', imageUrl: '/images/ather-450x.jpg', color: 'teal', category: 'Scooter' },
 ];
 
 export const BIKES: Bike[] = [...COMMUTER_BIKES, ...SPORTS_BIKES, ...SCOOTERS];
