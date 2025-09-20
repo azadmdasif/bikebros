@@ -34,7 +34,7 @@ const SCOOTERS: Bike[] = [
 export const BIKES: Bike[] = [...COMMUTER_BIKES, ...SPORTS_BIKES, ...SCOOTERS];
 
 export const SCOOTER_RATES: BikeRates = {
-  'Suzuki Access 125':     { '6': 599, '12': 799,  '24': 1199 },
+  'Suzuki Access 125':     { '6': 699, '12': 799,  '24': 1199 },
   'Honda Activa 125':      { '6': 599, '12': 799,  '24': 1199 },
   'TVS Jupiter 125':       { '6': 599, '12': 799,  '24': 1199 },
   'Honda Dio 125':         { '6': 599, '12': 799,  '24': 1199 },
