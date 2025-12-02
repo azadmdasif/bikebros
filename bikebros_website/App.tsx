@@ -102,22 +102,5 @@ const App: React.FC = () => {
     </div>
   );
 };
-function App() {
-  useEffect(() => {
-    if (window.gtag) {
-      window.gtag("config", "G-TCSRH9SVJD", {
-        page_path: window.location.pathname,
-      });
-    }
-  }, []);
-
-  return (
-    <>
-      {/* your existing layout */}
-      <Hero />
-      {/* other sections: About, Rates, Contact, etc. */}
-    </>
-  );
-}
 
 export default App;
