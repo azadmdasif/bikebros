@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -24,6 +24,13 @@ const App: React.FC = () => {
   const [modalContent, setModalContent] = useState<LegalContent | null>(null);
   const [selectedBikeForBooking, setSelectedBikeForBooking] = useState<string | null>(null);
 
+  // ✅ GA4 page_view on initial load (SPA)
+  useEffect(() => {
+    (window as any).gtag?.('config', 'G-TCSRH9SVJD', {
+      page_path: window.location.pathname,
+    });
+  }, []);
+
   const scrollTo = (ref: React.RefObject<HTMLElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -40,7 +47,7 @@ const App: React.FC = () => {
     setSelectedBikeForBooking(bikeId.toString());
     // Give state a moment to update before scrolling
     setTimeout(() => {
-        scrollTo(bookingRef);
+      scrollTo(bookingRef);
     }, 100);
   };
 
@@ -78,7 +85,7 @@ const App: React.FC = () => {
           <Contact />
         </div>
         <div ref={bookingRef}>
-           <BookingForm
+          <BookingForm
             bikes={BIKES}
             scooterRates={SCOOTER_RATES}
             commuterRates={COMMUTER_RATES}
